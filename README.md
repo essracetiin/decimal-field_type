@@ -1,2 +1,3 @@
-# decimal-field_type
+# Decimal
+
 Decimal field type.
