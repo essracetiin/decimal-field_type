@@ -1,0 +1,22 @@
+{
+    "name": "anomaly/decimal-field_type",
+    "type": "streams-addon",
+    "description": "Decimal field type.",
+    "authors": [
+        {
+            "name": "AnomalyLabs",
+            "email": "hello@anomaly.is"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\DecimalFieldType\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
