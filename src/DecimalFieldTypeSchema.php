@@ -21,15 +21,15 @@ class DecimalFieldTypeSchema extends FieldTypeSchema
      */
     public function addColumn(Blueprint $table, AssignmentInterface $assignment)
     {
-        $decimals = array_get($this->type->getConfig(), 'decimals', 2);
+        $decimals = array_get($this->fieldType->getConfig(), 'decimals', 2);
 
         $float = 11 - $decimals;
 
-        $table->{$this->type->getColumnType()}($this->type->getColumnName(), $float, $decimals)
+        $table->{$this->fieldType->getColumnType()}($this->fieldType->getColumnName(), $float, $decimals)
             ->nullable(!$assignment->isRequired());
 
         if ($assignment->isUnique()) {
-            $table->unique($this->type->getColumnName());
+            $table->unique($this->fieldType->getColumnName());
         }
     }
 }
