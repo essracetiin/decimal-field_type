@@ -1,7 +1,7 @@
 {
     "name": "anomaly/decimal-field_type",
     "type": "streams-addon",
-    "description": "Decimal field type.",
+    "description": "A decimal number field type.",
     "authors": [
         {
             "name": "AnomalyLabs",
