@@ -10,6 +10,9 @@ return [
     'decimals'    => [
         'label' => 'Decimals'
     ],
+    'point'       => [
+        'label' => 'Decimal Point'
+    ],
     'min'         => [
         'label' => 'Minimum'
     ],

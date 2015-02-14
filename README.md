@@ -11,6 +11,7 @@ The decimal field type provides a basic HTML input that restricts values to a sp
 - `min` - any valid decimal
 - `max` - any valid decimal
 - `point` - any valid decimal point character
+- `decimals` - any valid integer
 - `separator` - any valid separator character
 - `placeholder` - any string including translation keys
 

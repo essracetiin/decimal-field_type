@@ -4,6 +4,9 @@ return [
     'separator' => [
         'type' => 'anomaly.field_type.text'
     ],
+    'point'     => [
+        'type' => 'anomaly.field_type.text'
+    ],
     'decimals'  => [
         'type' => 'anomaly.field_type.integer'
     ],
