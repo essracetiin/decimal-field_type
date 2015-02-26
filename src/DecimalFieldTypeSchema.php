@@ -23,9 +23,7 @@ class DecimalFieldTypeSchema extends FieldTypeSchema
     {
         $decimals = array_get($this->fieldType->getConfig(), 'decimals', 2);
 
-        $float = 11 - $decimals;
-
-        $table->{$this->fieldType->getColumnType()}($this->fieldType->getColumnName(), $float, $decimals)
+        $table->{$this->fieldType->getColumnType()}($this->fieldType->getColumnName(), 11, $decimals)
             ->nullable(!$assignment->isRequired());
 
         if ($assignment->isUnique()) {
