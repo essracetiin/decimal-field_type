@@ -21,6 +21,11 @@ class DecimalFieldTypeSchema extends FieldTypeSchema
      */
     public function addColumn(Blueprint $table, AssignmentInterface $assignment)
     {
+        // Skip if the column already exists.
+        if ($this->schema->hasColumn($table->getTable(), $this->fieldType->getColumnName())) {
+            return;
+        }
+
         $decimals = array_get($this->fieldType->getConfig(), 'decimals', 2);
 
         $table->{$this->fieldType->getColumnType()}($this->fieldType->getColumnName(), 11, $decimals)
