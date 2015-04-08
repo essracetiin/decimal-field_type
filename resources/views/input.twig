@@ -6,5 +6,5 @@
         value="{{ field_type.value }}"
         data-min="{{ field_type.config.min }}"
         data-max="{{ field_type.config.max }}"
-        name="{{ field_type.getInputName() }}"
+        name="{{ field_type.input_name }}"
         data-step="0.{{ str_pad(1, field_type.config.decimals-1, 0, STR_PAD_LEFT) }}">
