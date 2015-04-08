@@ -14,6 +14,13 @@ class DecimalFieldType extends FieldType
 {
 
     /**
+     * The input view.
+     *
+     * @var string
+     */
+    protected $inputView = 'anomaly.field_type.decimal::input';
+
+    /**
      * The field type rules.
      *
      * @var array
@@ -35,7 +42,8 @@ class DecimalFieldType extends FieldType
      * @var array
      */
     protected $config = [
-        'decimals' => 2
+        'decimals' => 2,
+        'min'      => 0
     ];
 
     /**

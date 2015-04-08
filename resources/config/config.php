@@ -14,9 +14,9 @@ return [
         ]
     ],
     'min'       => [
-        'type' => 'anomaly.field_type.decimal'
+        'type' => 'anomaly.field_type.text'
     ],
     'max'       => [
-        'type' => 'anomaly.field_type.decimal'
+        'type' => 'anomaly.field_type.text'
     ]
 ];
