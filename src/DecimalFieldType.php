@@ -30,6 +30,15 @@ class DecimalFieldType extends FieldType
     protected $columnType = 'decimal';
 
     /**
+     * The default config.
+     *
+     * @var array
+     */
+    protected $config = [
+        'decimals' => 2
+    ];
+
+    /**
      * Get the rules.
      *
      * @return array

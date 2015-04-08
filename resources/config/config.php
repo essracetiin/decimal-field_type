@@ -8,7 +8,10 @@ return [
         'type' => 'anomaly.field_type.text'
     ],
     'decimals'  => [
-        'type' => 'anomaly.field_type.integer'
+        'type'   => 'anomaly.field_type.integer',
+        'config' => [
+            'min' => 1
+        ]
     ],
     'min'       => [
         'type' => 'anomaly.field_type.decimal'

@@ -1,22 +1,24 @@
 <?php
 
 return [
-    'placeholder' => [
-        'label' => 'Placeholder'
+    'separator' => [
+        'label'        => 'Thousands Separator',
+        'instructions' => 'Enter the character(s) to use for the thousands separator.'
     ],
-    'separator'   => [
-        'label' => 'Separator'
+    'decimals'  => [
+        'label'        => 'Decimals',
+        'instructions' => 'Enter the number of decimal places to use.'
     ],
-    'decimals'    => [
-        'label' => 'Decimals'
+    'point'     => [
+        'label'        => 'Decimal Point',
+        'instructions' => 'Enter the character(s) to use for the decimal point.'
     ],
-    'point'       => [
-        'label' => 'Decimal Point'
+    'min'       => [
+        'label'        => 'Minimum',
+        'instructions' => 'What is the minimum value allowed?'
     ],
-    'min'         => [
-        'label' => 'Minimum'
-    ],
-    'max'         => [
-        'label' => 'Maximum'
+    'max'       => [
+        'label'        => 'Maximum',
+        'instructions' => 'What is the maximum value allowed?'
     ]
 ];
