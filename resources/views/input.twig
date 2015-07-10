@@ -5,10 +5,11 @@
 <input
         type="text"
         class="form-control"
-        value="{{ field_type.value }}"
+        name="{{ field_type.input_name }}"
         data-min="{{ field_type.config.min }}"
         data-max="{{ field_type.config.max }}"
-        name="{{ field_type.input_name }}"
+        data-decimals="{{ field_type.config.decimals }}"
         data-step="0.{{ str_pad(1, field_type.config.decimals-1, 0, STR_PAD_LEFT) }}"
+        value="{{ str_pad(field_type.value, field_type.config.decimals, 0, STR_PAD_RIGHT) }}"
         {{ field_type.disabled ? 'disabled' }}
         {{ field_type.readonly ? 'readonly' }}>

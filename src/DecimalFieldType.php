@@ -34,7 +34,7 @@ class DecimalFieldType extends FieldType
      *
      * @var string
      */
-    protected $columnType = 'decimal';
+    protected $columnType = 'float';
 
     /**
      * The default config.
@@ -42,8 +42,10 @@ class DecimalFieldType extends FieldType
      * @var array
      */
     protected $config = [
-        'decimals' => 2,
-        'min'      => 0
+        'separator' => ',',
+        'point'     => '.',
+        'decimals'  => 2,
+        'min'       => 0
     ];
 
     /**

@@ -3,15 +3,15 @@
 return [
     'decimals'  => [
         'label'        => 'Decimals',
-        'instructions' => 'Enter the number of decimal places to use.'
+        'instructions' => 'Enter the number of decimal places to allow. This is for displaying values only.'
     ],
     'separator' => [
         'label'        => 'Thousands Separator',
-        'instructions' => 'Enter the character(s) to use for the thousands separator. This is used for display only.'
+        'instructions' => 'Choose the thousands separator to use. This is for displaying values only.'
     ],
     'point'     => [
         'label'        => 'Decimal Point',
-        'instructions' => 'Enter the character(s) to use for the decimal point. This is used for display only.'
+        'instructions' => 'Choose the decimal point to use.'
     ],
     'min'       => [
         'label'        => 'Minimum Value',

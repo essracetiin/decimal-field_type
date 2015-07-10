@@ -3,6 +3,7 @@
 use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeSchema;
 use Anomaly\Streams\Platform\Assignment\Contract\AssignmentInterface;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Fluent;
 
 /**
  * Class DecimalFieldTypeSchema
@@ -26,12 +27,22 @@ class DecimalFieldTypeSchema extends FieldTypeSchema
             return;
         }
 
-        $decimals = array_get($this->fieldType->getConfig(), 'decimals', 2);
+        /**
+         * Add the column to the table.
+         *
+         * @var Blueprint|Fluent $column
+         */
+        $column = $table->{$this->fieldType->getColumnType()}(
+            $this->fieldType->getColumnName(),
+            array_get($this->fieldType->getConfig(), 'decimals', 2)
+        )->nullable(!$assignment->isTranslatable() ? !$assignment->isRequired() : true);
 
-        $table->{$this->fieldType->getColumnType()}($this->fieldType->getColumnName(), 11, $decimals)
-            ->nullable(!$assignment->isRequired());
+        if (!str_contains($this->fieldType->getColumnType(), ['text', 'blob'])) {
+            $column->default(array_get($this->fieldType->getConfig(), 'default_value'));
+        }
 
-        if ($assignment->isUnique()) {
+        // Mark the column unique if desired and not translatable.
+        if ($assignment->isUnique() && !$assignment->isTranslatable()) {
             $table->unique($this->fieldType->getColumnName());
         }
     }

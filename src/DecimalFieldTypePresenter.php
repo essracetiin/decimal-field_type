@@ -18,12 +18,12 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
      *
      * @return string
      */
-    public function format()
+    public function formatted()
     {
         $separator = array_get($this->object->getConfig(), 'separator');
         $decimals  = array_get($this->object->getConfig(), 'decimals', 2);
         $point     = array_get($this->object->getConfig(), 'point', '.');
 
-        return number_format($this->object->getValue(), $decimals, $point, $separator);
+        return number_format($this->object->getValue(), $decimals, $point, str_replace('&#160;', ' ', $separator));
     }
 }
