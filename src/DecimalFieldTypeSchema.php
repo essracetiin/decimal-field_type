@@ -34,6 +34,7 @@ class DecimalFieldTypeSchema extends FieldTypeSchema
          */
         $column = $table->{$this->fieldType->getColumnType()}(
             $this->fieldType->getColumnName(),
+            11,
             array_get($this->fieldType->getConfig(), 'decimals', 2)
         )->nullable(!$assignment->isTranslatable() ? !$assignment->isRequired() : true);
 

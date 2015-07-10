@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'separator' => [
+    'separator'     => [
         'type'     => 'anomaly.field_type.select',
         'required' => true,
         'config'   => [
@@ -14,7 +14,7 @@ return [
             ]
         ]
     ],
-    'point'     => [
+    'point'         => [
         'type'     => 'anomaly.field_type.select',
         'required' => true,
         'config'   => [
@@ -26,19 +26,26 @@ return [
             ]
         ]
     ],
-    'decimals'  => [
-        'type'   => 'anomaly.field_type.integer',
-        'config' => [
+    'decimals'      => [
+        'type'     => 'anomaly.field_type.integer',
+        'required' => true,
+        'config'   => [
             'min' => 1
         ]
     ],
-    'min'       => [
+    'min'           => [
         'type'  => 'anomaly.field_type.text',
         'rules' => [
             'numeric'
         ]
     ],
-    'max'       => [
+    'max'           => [
+        'type'  => 'anomaly.field_type.text',
+        'rules' => [
+            'numeric'
+        ]
+    ],
+    'default_value' => [
         'type'  => 'anomaly.field_type.text',
         'rules' => [
             'numeric'
