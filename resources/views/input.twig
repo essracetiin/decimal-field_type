@@ -1,10 +1,14 @@
+{{ asset_add('styles.css', 'anomaly.field_type.decimal::less/spinner.less') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.decimal::js/jquery-ui.spinner.min.js') }}
 {{ asset_add('scripts.js', 'anomaly.field_type.decimal::js/input.js') }}
 
 <input
         type="text"
-        class="decimal form-control"
+        class="form-control"
         value="{{ field_type.value }}"
         data-min="{{ field_type.config.min }}"
         data-max="{{ field_type.config.max }}"
         name="{{ field_type.input_name }}"
-        data-step="0.{{ str_pad(1, field_type.config.decimals-1, 0, STR_PAD_LEFT) }}">
+        data-step="0.{{ str_pad(1, field_type.config.decimals-1, 0, STR_PAD_LEFT) }}"
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>

@@ -1,7 +1,7 @@
 $(function () {
 
     // Initialize decimals
-    $('input[type="text"].decimal').each(function () {
+    $('.decimal-field-type input').each(function () {
         $(this).spinner({
             min: $(this).data('min'),
             max: $(this).data('max'),

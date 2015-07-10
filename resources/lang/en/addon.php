@@ -2,5 +2,5 @@
 
 return [
     'name'        => 'Decimal',
-    'description' => 'Decimal field type.'
+    'description' => 'A decimal number field type.'
 ];
