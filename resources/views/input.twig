@@ -9,6 +9,7 @@
         data-min="{{ field_type.config.min }}"
         data-max="{{ field_type.config.max }}"
         data-decimals="{{ field_type.config.decimals }}"
+        placeholder="{{ trans(field_type.placeholder) }}"
         data-step="0.{{ str_pad(1, field_type.config.decimals, 0, STR_PAD_LEFT) }}"
         value="{{ str_pad(field_type.value, field_type.config.decimals, 0, STR_PAD_RIGHT) }}"
         {{ field_type.disabled ? 'disabled' }}
