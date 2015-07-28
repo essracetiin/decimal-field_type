@@ -1,8 +1,6 @@
 # Output
 
-This field type returns the as formatted in the database by default.
-
-**Examples:**
+This field type returns the decimal value as formatted in the database by default.
 
 ### `formatted`
 
