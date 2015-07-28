@@ -1,12 +1,12 @@
 # Output
 
-This field type returns the number.
+This field type returns the as formatted in the database by default.
 
 **Examples:**
 
 ### `formatted`
 
-Return a formatted integer
+Return the value formatted per field configuration.
 
 ```
 // Twig Usage
