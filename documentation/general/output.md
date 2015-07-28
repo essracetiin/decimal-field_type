@@ -10,6 +10,6 @@ Return the value formatted per field configuration.
 // Twig Usage
 {{ entry.example.formatted }}
 
-// API Usage
+// API usage
 $entry->example->formatted();
 ```
