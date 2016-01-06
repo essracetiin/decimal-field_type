@@ -14,13 +14,6 @@ class DecimalFieldType extends FieldType
 {
 
     /**
-     * The input view.
-     *
-     * @var string
-     */
-    protected $inputView = 'anomaly.field_type.decimal::input';
-
-    /**
      * The field type rules.
      *
      * @var array
@@ -66,5 +59,19 @@ class DecimalFieldType extends FieldType
         }
 
         return $rules;
+    }
+
+    /**
+     * Get the input view.
+     *
+     * @return string
+     */
+    public function getInputView()
+    {
+        if ($this->request->segment(1) == 'admin') {
+            return 'anomaly.field_type.decimal::admin/input';
+        }
+
+        return 'anomaly.field_type.decimal::input';
     }
 }
