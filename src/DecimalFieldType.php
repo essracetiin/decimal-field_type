@@ -1,6 +1,7 @@
 <?php namespace Anomaly\DecimalFieldType;
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
+use Illuminate\Http\Request;
 
 /**
  * Class DecimalFieldType
@@ -40,6 +41,23 @@ class DecimalFieldType extends FieldType
         'decimals'  => 2,
         'min'       => 0
     ];
+
+    /**
+     * The request object.
+     *
+     * @var Request
+     */
+    protected $request;
+
+    /**
+     * Create a new IntegerFieldType instance.
+     *
+     * @param Request $request
+     */
+    public function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
 
     /**
      * Get the rules.
