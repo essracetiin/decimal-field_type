@@ -1,12 +1,12 @@
 $(function () {
 
     // Initialize decimals
-    $('.decimal-field_type input').each(function () {
+    $('input[data-provides="anomaly.field_type.decimal"]').each(function () {
         $(this).spinner({
-            min: $(this).data('min'),
-            max: $(this).data('max'),
-            step: $(this).data('step')
-        })
+                min: $(this).data('min'),
+                max: $(this).data('max'),
+                step: $(this).data('step')
+            })
             .val(Number($(this).val()).toFixed($(this).data('decimals')))
             .on('change', function () {
                 $(this).val(Number($(this).val()).toFixed($(this).data('decimals')));
