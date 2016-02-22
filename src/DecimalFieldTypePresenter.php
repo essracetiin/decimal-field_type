@@ -41,6 +41,10 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
             $currency = $this->object->getEntry()->{$field};
         }
 
+        if (!$currency) {
+            $currency = config('streams::currencies.default');
+        }
+
         $format = new NumberFormatter(config('app.locale') . "@currency={$currency}", NumberFormatter::CURRENCY);
 
         $symbol = $format->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
