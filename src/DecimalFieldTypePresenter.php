@@ -1,7 +1,6 @@
 <?php namespace Anomaly\DecimalFieldType;
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldTypePresenter;
-use NumberFormatter;
 
 /**
  * Class DecimalFieldTypePresenter
@@ -45,9 +44,7 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
             $currency = config('streams::currencies.default');
         }
 
-        $format = new NumberFormatter(config('app.locale') . "@currency={$currency}", NumberFormatter::CURRENCY);
-
-        $symbol = $format->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
+        $symbol = config('streams::currencies.supported.' . strtoupper($currency), '?');
 
         return $symbol . $this->formatted();
     }
