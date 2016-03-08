@@ -43,7 +43,7 @@
 // Spinner Input
 .ui-spinner-input {
     width: 100%;
-    border-radius: 5px 0 0 5px;
+    border-radius: @input-border-radius 0 0 @input-border-radius;
     text-align: left;
     padding: 6px 12px;
     border-right-width: 0 !important;
@@ -133,13 +133,13 @@
 .ui-spinner-up {
     border-bottom: 2px solid mix(#bdc3c7, white, 70%);
     top: 0;
-    border-radius: 0 5px 0 0;
+    border-radius: 0 @input-border-radius 0 0;
 }
 
 .ui-spinner-down {
     bottom: 0;
     height: 20px;
-    border-radius: 0 0 5px 0;
+    border-radius: 0 0 @input-border-radius 0;
 
     .ui-icon:before {
         content: "\f0d7";
