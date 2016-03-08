@@ -44,7 +44,7 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
             $currency = config('streams::currencies.default');
         }
 
-        $symbol = config('streams::currencies.supported.' . strtoupper($currency), '?');
+        $symbol = config('streams::currencies.supported.' . strtoupper($currency) . '.symbol', '?');
 
         return $symbol . $this->formatted();
     }
