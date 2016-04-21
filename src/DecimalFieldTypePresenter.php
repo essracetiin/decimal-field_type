@@ -20,9 +20,9 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
      */
     public function formatted()
     {
-        $separator = array_get($this->object->getConfig(), 'separator');
-        $decimals  = array_get($this->object->getConfig(), 'decimals', 2);
-        $point     = array_get($this->object->getConfig(), 'point', '.');
+        $separator = $this->object->config('separator');
+        $decimals  = $this->object->config('decimals', 2);
+        $point     = $this->object->config('point', '.');
 
         return number_format($this->object->getValue(), $decimals, $point, str_replace('&#160;', ' ', $separator));
     }
