@@ -14,11 +14,11 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
 {
 
     /**
-     * Return a formatted integer.
+     * Return the formatted decimal.
      *
      * @return string
      */
-    public function formatted()
+    public function format()
     {
         $separator = $this->object->config('separator');
         $decimals  = $this->object->config('decimals', 2);
@@ -46,6 +46,6 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
 
         $symbol = config('streams::currencies.supported.' . strtoupper($currency) . '.symbol', '?');
 
-        return $symbol . $this->formatted();
+        return $symbol . $this->format();
     }
 }
