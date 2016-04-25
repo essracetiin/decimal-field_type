@@ -7,7 +7,6 @@
 
 Below is the full configuration available with defaults.
 
-    {% code php %}
     protected $fields = [
         "example" => [
             "type"   => "anomaly.field_type.country",
@@ -20,7 +19,6 @@ Below is the full configuration available with defaults.
             ]
         ]
     ];
-    {% endcode %}
 
 <hr>
 
@@ -29,7 +27,7 @@ Below is the full configuration available with defaults.
 
 ### Default Value
 
-{{ code('php', '"default_type" => 25.00') }}
+    "default_type" => 25.00
 
 The `default_value` is a core option. This field type accepts any decimal value. The value will be converted into the configured format automatically.
 
@@ -40,19 +38,19 @@ The `default_value` is a core option. This field type accepts any decimal value.
 
 ### Thousands Separator
 
-{{ code('php', '"separator" => ","') }}
+    "separator" => ","
 
 Specify the thousands separator character to use for input / output. Any valid character can be specified.
 
 ### Decimal Point
 
-{{ code('php', '"point" => "."') }}
+    "point" => "."
 
 Specify the decimal point character to use for input / output. Any valid character can be specified.
 
 ### Decimal Places
 
-{{ code('php', '"decimals" => 4') }}
+    "decimals" => 4
 
 Specify the number of decimal places to use for input / output.
 
