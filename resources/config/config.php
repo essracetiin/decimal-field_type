@@ -1,6 +1,31 @@
 <?php
 
 return [
+    'decimals'      => [
+        'type'     => 'anomaly.field_type.integer',
+        'required' => true,
+        'config'   => [
+            'min' => 1
+        ]
+    ],
+    'min'           => [
+        'type'  => 'anomaly.field_type.text',
+        'rules' => [
+            'numeric'
+        ]
+    ],
+    'max'           => [
+        'type'  => 'anomaly.field_type.text',
+        'rules' => [
+            'numeric'
+        ]
+    ],
+    'default_value' => [
+        'type'  => 'anomaly.field_type.text',
+        'rules' => [
+            'numeric'
+        ]
+    ],
     'separator'     => [
         'type'     => 'anomaly.field_type.select',
         'required' => true,
@@ -26,29 +51,4 @@ return [
             ]
         ]
     ],
-    'decimals'      => [
-        'type'     => 'anomaly.field_type.integer',
-        'required' => true,
-        'config'   => [
-            'min' => 1
-        ]
-    ],
-    'min'           => [
-        'type'  => 'anomaly.field_type.text',
-        'rules' => [
-            'numeric'
-        ]
-    ],
-    'max'           => [
-        'type'  => 'anomaly.field_type.text',
-        'rules' => [
-            'numeric'
-        ]
-    ],
-    'default_value' => [
-        'type'  => 'anomaly.field_type.text',
-        'rules' => [
-            'numeric'
-        ]
-    ]
 ];
