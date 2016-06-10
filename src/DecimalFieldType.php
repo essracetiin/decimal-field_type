@@ -15,6 +15,13 @@ class DecimalFieldType extends FieldType
 {
 
     /**
+     * The database column type.
+     *
+     * @var string
+     */
+    protected $columnType = 'float';
+
+    /**
      * The input view.
      *
      * @var string
@@ -29,13 +36,6 @@ class DecimalFieldType extends FieldType
     protected $rules = [
         'numeric'
     ];
-
-    /**
-     * The database column type.
-     *
-     * @var string
-     */
-    protected $columnType = 'float';
 
     /**
      * The default config.
