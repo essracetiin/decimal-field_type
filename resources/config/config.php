@@ -5,26 +5,32 @@ return [
         'type'     => 'anomaly.field_type.integer',
         'required' => true,
         'config'   => [
-            'min' => 1
-        ]
+            'min' => 1,
+        ],
     ],
     'min'           => [
         'type'  => 'anomaly.field_type.text',
         'rules' => [
-            'numeric'
-        ]
+            'numeric',
+        ],
     ],
     'max'           => [
         'type'  => 'anomaly.field_type.text',
         'rules' => [
-            'numeric'
-        ]
+            'numeric',
+        ],
+        'rules' => [
+            'nullable',
+        ],
     ],
     'default_value' => [
         'type'  => 'anomaly.field_type.text',
         'rules' => [
-            'numeric'
-        ]
+            'numeric',
+        ],
+        'rules' => [
+            'nullable',
+        ],
     ],
     'separator'     => [
         'type'     => 'anomaly.field_type.select',
@@ -35,9 +41,9 @@ return [
                 ','      => '1,000',
                 '.'      => '1.000',
                 '`'      => '1`000',
-                '&#160;' => '1 000'
-            ]
-        ]
+                '&#160;' => '1 000',
+            ],
+        ],
     ],
     'point'         => [
         'type'     => 'anomaly.field_type.select',
@@ -47,8 +53,8 @@ return [
             'options'       => [
                 ',' => '0,10',
                 '.' => '0.10',
-                '`' => '0`10'
-            ]
-        ]
+                '`' => '0`10',
+            ],
+        ],
     ],
 ];
