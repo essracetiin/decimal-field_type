@@ -10,26 +10,17 @@ return [
     ],
     'min'           => [
         'type'  => 'anomaly.field_type.text',
-        'rules' => [
-            'numeric',
-        ],
     ],
     'max'           => [
         'type'  => 'anomaly.field_type.text',
         'rules' => [
             'numeric',
         ],
-        'rules' => [
-            'nullable',
-        ],
     ],
     'default_value' => [
         'type'  => 'anomaly.field_type.text',
         'rules' => [
             'numeric',
-        ],
-        'rules' => [
-            'nullable',
         ],
     ],
     'separator'     => [
