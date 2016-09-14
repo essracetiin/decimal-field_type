@@ -4,6 +4,11 @@ $(function () {
 
     // Initialize decimals
     decimals.on('change', function () {
+
+        if ($(this).val() == '') {
+            return;
+        }
+
         $(this).val(Number($(this).val()).toFixed($(this).data('decimals')));
     });
 });
