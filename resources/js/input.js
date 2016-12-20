@@ -1,4 +1,4 @@
-$(function () {
+$(document).on('ajaxComplete ready', function () {
 
     var decimals = $('input[data-provides="anomaly.field_type.decimal"]');
 
