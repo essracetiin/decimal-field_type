@@ -1,6 +1,8 @@
 $(document).on('ajaxComplete ready', function () {
 
-    var decimals = $('input[data-provides="anomaly.field_type.decimal"]');
+    var decimals = $('input[data-provides="anomaly.field_type.decimal"]:not([data-initialized])');
+
+    decimals.attr('data-initialized', '');
 
     // Initialize decimals
     decimals.on('change', function () {
