@@ -8,6 +8,13 @@ return [
             'min' => 1,
         ],
     ],
+    'digits' => [
+        'type' => 'anomaly.field_type.integer',
+        'required' => true,
+        'config' => [
+            'min' => 1,
+        ],
+    ],
     'min'           => [
         'type'  => 'anomaly.field_type.text',
     ],
