@@ -34,7 +34,7 @@ class DecimalFieldType extends FieldType
      * @var array
      */
     protected $rules = [
-        'numeric'
+        'numeric',
     ];
 
     /**
@@ -45,8 +45,9 @@ class DecimalFieldType extends FieldType
     protected $config = [
         'separator' => ',',
         'point'     => '.',
+        'digits'    => 11,
         'decimals'  => 2,
-        'min'       => 0
+        'min'       => 0,
     ];
 
     /**
