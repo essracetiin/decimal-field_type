@@ -1,16 +1,18 @@
-$(document).on('ajaxComplete ready', function () {
+(function (window, document) {
 
-    var decimals = $('input[data-provides="anomaly.field_type.decimal"]:not([data-initialized])');
+    let fields = Array.from(
+        document.querySelectorAll('input[data-provides="anomaly.field_type.decimal"]')
+    );
 
-    decimals.attr('data-initialized', '');
+    fields.forEach(function (field) {
 
-    // Initialize decimals
-    decimals.on('change', function () {
+        field.addEventListener('change', function (event) {
 
-        if ($(this).val() == '') {
-            return;
-        }
+            if (event.target.value == '') {
+                return;
+            }
 
-        $(this).val(Number($(this).val()).toFixed($(this).data('decimals')));
+            event.target.value = Number(event.target.value).toFixed(event.target.dataset.decimals);
+        });
     });
-});
+})(window, document);
