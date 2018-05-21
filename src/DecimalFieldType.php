@@ -76,11 +76,11 @@ class DecimalFieldType extends FieldType
     {
         $rules = parent::getRules();
 
-        if (null !== ($min = array_get($this->config, 'min'))) {
+        if (!is_null($min = array_get($this->config, 'min'))) {
             $rules[] = 'min:' . $min;
         }
 
-        if (null !== ($max = array_get($this->config, 'max'))) {
+        if (!is_null($max = array_get($this->config, 'max'))) {
             $rules[] = 'max:' . $max;
         }
 
