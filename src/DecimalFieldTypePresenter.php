@@ -21,8 +21,8 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
     public function format()
     {
         $separator = $this->object->config('separator');
-        $decimals  = $this->object->config('decimals');
-        $point     = $this->object->config('point');
+        $decimals = $this->object->config('decimals');
+        $point = $this->object->config('point');
 
         return number_format($this->object->getValue(), $decimals, $point, str_replace('&#160;', ' ', $separator));
     }
@@ -30,7 +30,7 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
     /**
      * Return the integer formatted as a currency.
      *
-     * @param null   $currency
+     * @param null $currency
      * @param string $field
      * @return string
      */
@@ -44,8 +44,18 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
             $currency = config('streams::currencies.default');
         }
 
+        $direction = config('streams::currencies.supported.' . strtoupper($currency) . '.direction');
         $symbol = config('streams::currencies.supported.' . strtoupper($currency) . '.symbol');
 
-        return $symbol . $this->format();
+        $prefix = null;
+        $suffix = null;
+
+        if (strtolower($direction) == 'ltr') {
+            $prefix = $symbol;
+        } else {
+            $suffix = $symbol;
+        }
+
+        return $prefix . " " . $this->format() . " " . $suffix;
     }
 }
