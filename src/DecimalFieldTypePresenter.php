@@ -34,7 +34,7 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
      * @param string $field
      * @return string
      */
-    public function currency($currency = null, $field = 'currency')
+    public function currency($currency = null, $field = 'currency', $showDecimal = true)
     {
         if (!$currency) {
             $currency = $this->object->getEntry()->{$field};
@@ -55,7 +55,9 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
         } else {
             $suffix = $symbol;
         }
-
-        return $prefix . " " . $this->format() . " " . $suffix;
+        if ($showDecimal) {
+            return $prefix . " " . $this->format() . " " . $suffix;
+        }
+        return $prefix . " " . $this->object->getValue() . " " . $suffix;
     }
 }
