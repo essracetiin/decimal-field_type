@@ -1,7 +1,7 @@
 (function (window, document) {
 
     let fields = Array.prototype.slice.call(
-        document.querySelectorAll('input[data-provides="anomaly.field_type.decimal"]')
+        document.querySelectorAll('input[data-provides="visiosoft.field_type.decimal"]')
     );
 
     fields.forEach(function (field) {

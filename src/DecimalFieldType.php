@@ -1,4 +1,4 @@
-<?php namespace Anomaly\DecimalFieldType;
+<?php namespace Visiosoft\DecimalFieldType;
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
 use Illuminate\Http\Request;

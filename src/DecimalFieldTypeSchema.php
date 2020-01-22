@@ -1,4 +1,4 @@
-<?php namespace Anomaly\DecimalFieldType;
+<?php namespace Visiosoft\DecimalFieldType;
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeSchema;
 use Anomaly\Streams\Platform\Assignment\Contract\AssignmentInterface;

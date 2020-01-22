@@ -1,6 +1,6 @@
 # Decimal Field Type
 
-*anomaly.field_type.decimal*
+*visiosoft.field_type.decimal*
 
 ### A decimal number field type.
 

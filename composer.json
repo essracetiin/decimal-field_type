@@ -1,5 +1,5 @@
 {
-    "name": "anomaly/decimal-field_type",
+    "name": "visiosoft/decimal-field_type",
     "type": "streams-addon",
     "description": "A decimal number field type.",
     "keywords": [
@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Anomaly\\DecimalFieldType\\": "src/"
+            "Visiosoft\\DecimalFieldType\\": "src/"
         }
     }
 }

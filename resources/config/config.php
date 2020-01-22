@@ -2,7 +2,7 @@
 
 return [
     'decimals'      => [
-        'type'     => 'anomaly.field_type.integer',
+        'type'     => 'visiosoft.field_type.integer',
         'required' => true,
         'config'   => [
             'min' => 1,
