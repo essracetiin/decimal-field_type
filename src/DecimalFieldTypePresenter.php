@@ -23,8 +23,11 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
         $separator = $this->object->config('separator');
         $decimals = $this->object->config('decimals');
         $point = $this->object->config('point');
-
+        if (setting_value('visiosoft.field_type.decimal::showDecimalMaxPrice') < intval($this->object->getValue())) {
+            return $this->object->getValue();
+        }
         return number_format($this->object->getValue(), $decimals, $point, str_replace('&#160;', ' ', $separator));
+
     }
 
     /**
@@ -34,7 +37,7 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
      * @param string $field
      * @return string
      */
-    public function currency($currency = null, $field = 'currency', $showDecimal = true)
+    public function currency($currency = null, $field = 'currency')
     {
         if (!$currency) {
             $currency = $this->object->getEntry()->{$field};
@@ -55,7 +58,7 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
         } else {
             $suffix = $symbol;
         }
-        if ($showDecimal) {
+        if (setting_value('visiosoft.field_type.decimal::showDecimal')) {
             return $prefix . " " . $this->format() . " " . $suffix;
         }
         return $prefix . " " . $this->object->getValue() . " " . $suffix;
