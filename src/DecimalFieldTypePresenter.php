@@ -5,10 +5,10 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypePresenter;
 /**
  * Class DecimalFieldTypePresenter
  *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\DecialFieldType
+ * @link          https://visiosoft.com.tr/
+ * @author        Visiosoft, LTD. <support@visiosoft.com.tr>
+ * @author        Vedat Akdoğan <vedat@visiosoft.com.tr>
+ * @package       Visiosoft\DecialFieldType
  */
 class DecimalFieldTypePresenter extends FieldTypePresenter
 {
@@ -24,8 +24,11 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
         $decimals = $this->object->config('decimals');
         $point = $this->object->config('point');
         if (setting_value('visiosoft.field_type.decimal::showDecimalMaxPrice') < intval($this->object->getValue())) {
-            return $this->object->getValue();
+            if (setting_value('visiosoft.field_type.decimal::showDecimal') == "0") {
+                $decimals = 0;
+            }
         }
+
         return number_format($this->object->getValue(), $decimals, $point, str_replace('&#160;', ' ', $separator));
 
     }
@@ -58,9 +61,6 @@ class DecimalFieldTypePresenter extends FieldTypePresenter
         } else {
             $suffix = $symbol;
         }
-        if (setting_value('visiosoft.field_type.decimal::showDecimal')) {
-            return $prefix . " " . $this->format() . " " . $suffix;
-        }
-        return $prefix . " " . $this->object->getValue() . " " . $suffix;
+        return $prefix . " " . $this->format() . " " . $suffix;
     }
 }
