@@ -4,6 +4,7 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeSchema;
 use Anomaly\Streams\Platform\Assignment\Contract\AssignmentInterface;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Fluent;
+use Illuminate\Support\Str;
 
 /**
  * Class DecimalFieldTypeSchema
@@ -38,7 +39,7 @@ class DecimalFieldTypeSchema extends FieldTypeSchema
             array_get($this->fieldType->getConfig(), 'decimals', 2)
         )->nullable(!$assignment->isTranslatable() ? !$assignment->isRequired() : true);
 
-        if (!str_contains($this->fieldType->getColumnType(), ['text', 'blob'])) {
+        if (!Str::contains($this->fieldType->getColumnType(), ['text', 'blob'])) {
             $column->default(array_get($this->fieldType->getConfig(), 'default_value'));
         }
 
