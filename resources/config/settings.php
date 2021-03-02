@@ -12,7 +12,7 @@ return [
     'showDecimalMaxPrice' => [
         'type' => 'anomaly.field_type.integer',
         'config' => [
-            'default_value' => 10
+            'default_value' => 1000
         ],
     ],
 ];
