@@ -26,7 +26,7 @@ class DecimalFieldType extends FieldType
      *
      * @var string
      */
-    protected $inputView = 'anomaly.field_type.decimal::input';
+    protected $inputView = 'visiosoft.field_type.decimal::input';
 
     /**
      * The field type rules.
