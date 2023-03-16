@@ -15,4 +15,11 @@ return [
             'default_value' => 1000
         ],
     ],
+
+    'decimal_length' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 2
+        ],
+    ],
 ];
